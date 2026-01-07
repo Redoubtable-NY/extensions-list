@@ -123,7 +123,7 @@ function App() {
   return (
     <>
       <header>
-        <img alt="company name and logo" src="/public/images/logo.svg"/>
+        <img alt="company name and logo" src="/images/logo.svg"/>
       </header>
       <main>
         <section className="filter-controls-and-header-container">
