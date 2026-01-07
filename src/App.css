@@ -1,0 +1,353 @@
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px; 
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+body{
+  min-height: 100vh;
+}
+
+/* CSS Variables */
+
+:root{
+  /* Primitive Types */
+  --font-size-0: clamp(1rem, 2vw +.5rem ,1.25rem);
+  --font-size-1: clamp(1.25rem, 2vw + .675rem, 1.5rem);
+  --font-size-2: clamp(2rem, 2vw + .825rem, 2.25rem);
+
+  /* Primitive Spacing */
+  --spacing-0: 0rem;
+  --spacing-1: .25rem;
+  --spacing-2: .5rem;
+  --spacing-3: .75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-7: 2rem;
+  --spacing-8: 2.5rem;
+  --spacing-9: 3rem;
+  --spacing-10: 4rem;
+  --spacing-11: 8.5rem;
+
+  /* Primitive Corners */
+  --rounded-corner-0: 0rem; 
+  --rounded-corner-1: .25rem;
+  --rounded-corner-2: .5rem;
+  --rounded-corner-3: .75rem;
+  --rounded-corner-4: 1rem;
+  --rounded-corner-5: 1.25rem;
+  --rounded-corner-6: 1.5rem;
+  --rounded-corner-7: 62.5rem;
+
+  /* Primitive Colors */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 77%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+  --light-gradient: linear-gradient(0deg, hsl(171, 62%, 96%), hsl(215, 74%, 95%));
+  --dark-gradient: linear-gradient(0deg, hsl(227, 74%, 6%), hsla(227, 75%, 14%));
+}
+
+:root{
+  /* Typography */
+  --font-base: "Noto Sans", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-header-1: var(--font-size-2);
+  --font-header-2: var(--font-size-1);
+  --font-body-1: var(--font-size-1);
+  --font-body-2: var(--font-size-0);
+  --line-height: 1;
+  --line-height-M: 1.2;
+  --line-height-L: 1.4;
+  --kerning-s: -0.00125rem;  
+  --kerning-xs: -0.003125rem;
+  --kerning-xxs: -0.0625rem;
+
+  /* Spacing */
+  --vertical-space: var(--spacing-2);
+  --vertical-space-0: var(--spacing-3);
+  --vertical-space-1: var(--spacing-4);
+  --vertical-space-2: var(--spacing-5);
+  --vertical-space-3: var(--spacing-6);
+  --vertical-space-4: var(--spacing-7);
+  --vertical-space-5: var(--spacing-8);
+  --vertical-space-6: var(--spacing-9);
+  --vertical-space-7: var(--spacing-10);
+  --horizontal-space: var(--spacing-2);
+  --horizontal-space-0: var(--spacing-3);
+  --horizontal-space-1: var(--spacing-4);
+  --horizontal-space-2: var(--spacing-5);
+  --horizontal-space-3: var(--spacing-7);
+  --horizontal-space-4: var(--spacing-11);
+
+  /* Border styles */
+  --extension-card-rounded-corner: var(--rounded-corner-5);
+  --extension-CTA-rounded-corner: var(--rounded-corner-7);
+  --extension-switch-rounded-corner: var(--rounded-corner-7);
+  --extension-header-rounded-corner: var(--rounded-corner-3);
+  --display-mode-CTA-rounded-corner: var(--rounded-corner-3);
+  --filter-CTA-rounded-corner: var(--rounded-corner-7);
+  
+  /* Color */
+  --color-border: var(--neutral-200);
+  --color-interactive-button-background: var(--neutral-300);
+  --color-interactive-button-text: var(--neutral-900);
+  --color-interactive-switch-active-background: var(--red-700);
+  --color-interactive-switch-inactive-background: var(--neutral-300);
+  --color-interactive-switch-handle-background: var(--neutral-0);
+  --color-extension-background: var(--neutral-0);
+  --color-extension-header-background: var(--neutral-0);
+  --color-text-subdued: var(--neutral-600);
+  --color-text-regular: var(--neutral-900);
+  --color-filter-button-background-active: var(--red-700);
+  --color-filter-button-text-active: var(--neutral-0);
+  --color-filter-button-background-inactive: var(--red-700);
+  --color-filter-button-text-inactive: var(--neutral-900);
+}
+
+
+/* Layout */
+
+#root{
+  display: flex ;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header{
+  display: flex;
+  min-width: 316px;
+  justify-content: space-between;
+  margin: var(--vertical-space-2) var(--vertical-space-1) var(--vertical-space-5) var(--vertical-space-2);
+  padding: var(--vertical-space-1) var(--horizontal-space-1);
+}
+
+header button{
+  width: 50px;
+  border-radius: var(--display-mode-CTA-rounded-corner);
+}
+
+header button img{
+  width: 22px;
+}
+
+main{
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto auto;
+  gap: var(--vertical-space-5);
+}
+
+.filter-controls-and-header-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: var(--vertical-space-3);
+  align-items: center;
+}
+
+.filter-controls-container{
+  display: flex;
+  gap: var(--horizontal-space-0);
+}
+
+.filter-controls-container button{
+  border-radius: var(--filter-CTA-rounded-corner);
+  padding: var(--horizontal-space) var(--horizontal-space-2)
+}
+
+.extensions-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(332px, 100%), 1fr));
+  margin: 0 var(--vertical-space-1) var(--vertical-space-7) var(--vertical-space-1);
+  gap: var(--vertical-space-0)
+}
+
+.extension-card{
+  min-width: 320px;
+  height: fit-content;
+  display: grid;
+  grid-template-rows: 6rem 2.5rem;
+  justify-content: space-between;
+  gap: var(--vertical-space-6);
+  border-radius: var(--extension-card-rounded-corner);
+  padding: var(--vertical-space-2) var(--horizontal-space-2);
+}
+
+.extension-card .logo-and-extension-content{
+  display: flex;
+  gap: var(--horizontal-space-1);
+}
+
+.extension-card .logo-and-extension-content .extension-content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--vertical-space)
+}
+
+.extension-controls{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extension-card img{
+  width: 60px;
+  align-self: flex-start;
+}
+
+.extension-controls button{
+  padding: var(--vertical-space) var(--horizontal-space-1);
+  border-radius: var(--extension-CTA-rounded-corner);
+}
+
+.react-switch-label{
+  display: flex;
+  gap: var(--vertical-space);
+  align-items: center;
+}
+
+.react-switch-label input[type="checkbox"]{
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  width: 1.15em;
+  height: 1.15em;
+  border-radius: 0.35em;
+  transform: translateY(-0.005em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Typography */
+
+body, #root{
+  font-family: var(--font-base);
+}
+
+h1{
+  font-size: var(--font-header-1);
+  font-weight: var(--font-weight-bold);
+}
+
+.filter-controls-container button{
+  font-size: var(--font-body-1);
+}
+
+.extension-content h2{
+  font-size: var(--font-header-2);
+  font-weight: var(--font-weight-medium);
+}
+
+.extension-content p{
+  font-size: var(--font-body-2);
+}
+
+.extension-controls button{
+  font-size: var(--font-body-2);
+  font-weight: var(--font-weight-regular);
+}
+
+
+/* Color */
+
+body{
+  color: var(--color-text-regular);
+  background: var(--light-gradient);
+}
+
+header{
+  background-color: var(--color-extension-header-background);
+  border: 2px solid var(--color-border);
+  border-radius: var(--extension-header-rounded-corner);
+}
+
+header button{
+  border: none
+}
+
+.filter-controls-container button, .extension-controls button{
+  background-color: var(--color-extension-background);
+  border: 2px solid var(--color-border);
+}
+
+.filter-controls.active-filter{
+  background-color: var(--color-filter-button-background-active);
+  color: var(--color-filter-button-text-active);
+}
+
+.extension-card{
+  background-color: var(--color-extension-background);
+  border: 2px solid var(--color-border)
+}
+
+.logo-and-extension-content p{
+  color: var(--color-text-subdued);
+}
+
+.react-switch-label{
+  color: var(--color-text-subdued);
+}
+
+input[type="checkbox"]::before {
+  box-shadow: inset 1em 1em var(--red-400);
+}
+
+.react-switch-label input[type="checkbox"]{
+  background-color: #fff;
+  border: 0.15em solid var(--red-500);
+}
+
+/* Media Queries */
+
+@media screen and (width >= 768px){
+  .filter-controls-and-header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: var(--horizontal-space-3);
+    margin-right: var(--horizontal-space-3);
+  }
+
+  .extensions-container, header{
+    margin-left: var(--horizontal-space-3);
+    margin-right: var(--horizontal-space-3);
+  }
+}
